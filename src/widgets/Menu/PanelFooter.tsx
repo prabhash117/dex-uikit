@@ -119,7 +119,7 @@ const PanelFooter: React.FC<Props> = ({
           ))}
         </Dropdown>
       </SettingsEntry>
-      <SettingsEntry>
+      <SocialEntry>
         <Flex>
           {socials.map((social, index) => {
             const Icon = Icons[social.icon];
@@ -143,7 +143,7 @@ const PanelFooter: React.FC<Props> = ({
             );
           })}
         </Flex>
-      </SettingsEntry>
+      </SocialEntry>
     </Container>
   );
 };
