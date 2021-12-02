@@ -91,12 +91,12 @@ const PanelFooter: React.FC<Props> = ({
       <SocialEntry>
         <Flex>
           {socialsLinks.map((social, index) => {
-            const Icon = Icons[social.icon];
+            const Icon: any = social.icon;
+            const mr = index < socialsLinks.length - 1 ? "8px" : 0;
             const iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
-            const mr = index < socials.length - 1 ? "8px" : 0;
             if (social.items) {
               return (
-                <Dropdown key={social.label} position="top" target={<Icon {...iconProps} mr={mr} />}>
+                <Dropdown key={social.label} position="top" target={<Icon width={24} style={{ cursor: "pointer" }} />}>
                   {social.items.map((item) => (
                     <Link external key={item.label} href={item.href} aria-label={item.label} color="textSubtle">
                       {item.label}
@@ -107,7 +107,7 @@ const PanelFooter: React.FC<Props> = ({
             }
             return (
               <Link external key={social.label} href={social.href} aria-label={social.label} mr={mr}>
-                <Icon {...iconProps} />
+                <Icon width={24} style={{ cursor: "pointer" }} />
               </Link>
             );
           })}
