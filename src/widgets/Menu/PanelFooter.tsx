@@ -88,43 +88,6 @@ const PanelFooter: React.FC<Props> = ({
           <Skeleton width={80} height={24} />
         )}
       </SocialEntry>
-      <SocialEntry style={{ margin: "16px 0" }}>
-        <Flex color="textSubtle" style={{ flexWrap: "wrap" }}>
-          {socialsLinks.map((social, index) => {
-            const Icon: any = social.icon;
-            const mr = index < socialsLinks.length - 1 ? "8px" : 0;
-            const iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
-            if (social.items) {
-              return (
-                <Dropdown
-                  key={social.label}
-                  position="top"
-                  target={<Icon style={{ cursor: "pointer", color: "inherit", fontSize: 24, marginBottom: 16 }} />}
-                >
-                  {social.items.map((item) => (
-                    <Link external key={item.label} href={item.href} aria-label={item.label} color="textSubtle">
-                      {item.label}
-                    </Link>
-                  ))}
-                </Dropdown>
-              );
-            }
-            return (
-              <Link
-                external
-                key={social.label}
-                href={social.href}
-                aria-label={social.label}
-                color="textSubtle"
-                mr={mr}
-                mb={10}
-              >
-                <Icon style={{ cursor: "pointer", color: "inherit", fontSize: 24, marginBottom: 16 }} />
-              </Link>
-            );
-          })}
-        </Flex>
-      </SocialEntry>
       <SettingsEntry>
         <Button variant="text" onClick={() => toggleTheme(!isDark)}>
           {/* alignItems center is a Safari fix */}
@@ -157,6 +120,43 @@ const PanelFooter: React.FC<Props> = ({
           ))}
         </Dropdown>
       </SettingsEntry>
+      <SocialEntry style={{ margin: "16px 0" }}>
+        <Flex color="textSubtle" style={{ flexWrap: "wrap" }}>
+          {socialsLinks.map((social, index) => {
+            const Icon: any = social.icon;
+            const mr = index < socialsLinks.length - 1 ? "8px" : 0;
+            const iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
+            if (social.items) {
+              return (
+                <Dropdown
+                  key={social.label}
+                  position="top"
+                  target={<Icon style={{ cursor: "pointer", color: "inherit", fontSize: 24 }} />}
+                >
+                  {social.items.map((item) => (
+                    <Link external key={item.label} href={item.href} aria-label={item.label} color="textSubtle">
+                      {item.label}
+                    </Link>
+                  ))}
+                </Dropdown>
+              );
+            }
+            return (
+              <Link
+                external
+                key={social.label}
+                href={social.href}
+                aria-label={social.label}
+                color="textSubtle"
+                mr={mr}
+                mb={10}
+              >
+                <Icon style={{ cursor: "pointer", color: "inherit", fontSize: 24 }} />
+              </Link>
+            );
+          })}
+        </Flex>
+      </SocialEntry>
     </Container>
   );
 };
