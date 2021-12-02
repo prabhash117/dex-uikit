@@ -64,6 +64,7 @@ const PanelFooter: React.FC<Props> = ({
   langs,
   setLang,
   priceLink,
+  socialsLinks,
 }) => {
   if (!isPushed) {
     return (
@@ -87,10 +88,9 @@ const PanelFooter: React.FC<Props> = ({
           <Skeleton width={80} height={24} />
         )}
       </SocialEntry>
-      <div style={{ margin: "10px 0" }}>
-        <p>xhzgxhz</p>
+      <SocialEntry>
         <Flex>
-          {socials.map((social, index) => {
+          {socialsLinks.map((social, index) => {
             const Icon = Icons[social.icon];
             const iconProps = { width: "24px", color: "textSubtle", style: { cursor: "pointer" } };
             const mr = index < socials.length - 1 ? "8px" : 0;
@@ -112,7 +112,7 @@ const PanelFooter: React.FC<Props> = ({
             );
           })}
         </Flex>
-      </div>
+      </SocialEntry>
       <SettingsEntry>
         <Button variant="text" onClick={() => toggleTheme(!isDark)}>
           {/* alignItems center is a Safari fix */}
