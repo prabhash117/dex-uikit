@@ -120,7 +120,7 @@ const PanelFooter: React.FC<Props> = ({
           ))}
         </Dropdown>
       </SettingsEntry>
-      <SocialEntry style={{ margin: "16px 0" }}>
+      <SocialEntry style={{ margin: "16px 0", display: "block" }}>
         <Flex color="textSubtle" style={{ flexWrap: "wrap" }}>
           {socialsLinks.map((social, index) => {
             const Icon: any = social.icon;

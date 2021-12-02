@@ -2352,7 +2352,7 @@ var PanelFooter = function (_a) {
                     React.createElement(Text, { color: "textSubtle" }, currentLang === null || currentLang === void 0 ? void 0 : currentLang.toUpperCase())) }, langs.map(function (lang) { return (React.createElement(MenuButton, { key: lang.code, fullWidth: true, onClick: function () { return setLang(lang); }, 
                 // Safari fix
                 style: { minHeight: "32px", height: "auto" } }, lang.language)); }))),
-        React.createElement(SocialEntry, { style: { margin: "16px 0" } },
+        React.createElement(SocialEntry, { style: { margin: "16px 0", display: "block" } },
             React.createElement(Flex, { color: "textSubtle", style: { flexWrap: "wrap" } }, socialsLinks.map(function (social, index) {
                 var Icon = social.icon;
                 var mr = index < socialsLinks.length - 1 ? "8px" : 0;
