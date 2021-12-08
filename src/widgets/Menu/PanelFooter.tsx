@@ -12,10 +12,11 @@ import MenuButton from "./MenuButton";
 import * as IconModule from "./icons";
 import { socials, MENU_ENTRY_HEIGHT } from "./config";
 import { PanelProps, PushedProps } from "./types";
+import { display } from "styled-system";
 
 interface Props extends PanelProps, PushedProps {}
 
-const Icons = IconModule as unknown as { [key: string]: React.FC<SvgProps> };
+const Icons = (IconModule as unknown) as { [key: string]: React.FC<SvgProps> };
 const { MoonIcon, SunIcon, LanguageIcon } = Icons;
 
 const Container = styled.div`
@@ -88,7 +89,7 @@ const PanelFooter: React.FC<Props> = ({
           <Skeleton width={80} height={24} />
         )}
       </SocialEntry>
-      <SettingsEntry>
+      <SettingsEntry className="dark-light">
         <Button variant="text" onClick={() => toggleTheme(!isDark)}>
           {/* alignItems center is a Safari fix */}
           <Flex alignItems="center">

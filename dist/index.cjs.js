@@ -2355,7 +2355,7 @@ var PanelFooter = function (_a) {
         React__default['default'].createElement(SocialEntry, null, cakePriceUsd ? (React__default['default'].createElement(PriceLink, { href: priceLink, target: "_blank" },
             React__default['default'].createElement(Icon$v, { width: "24px", mr: "8px" }),
             React__default['default'].createElement(Text, { color: "textSubtle", bold: true }, "$" + cakePriceUsd.toFixed(8)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 }))),
-        React__default['default'].createElement(SettingsEntry, null,
+        React__default['default'].createElement(SettingsEntry, { className: "dark-light" },
             React__default['default'].createElement(Button, { variant: "text", onClick: function () { return toggleTheme(!isDark); } },
                 React__default['default'].createElement(Flex, { alignItems: "center" },
                     React__default['default'].createElement(SunIcon, { color: isDark ? "textDisabled" : "text", width: "24px" }),
