@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import { Link } from "../../components/Link";
 import { HelpIcon } from "../../components/Svg";
@@ -19,8 +19,26 @@ const HelpLink = styled(Link)`
   margin-top: 24px;
 `;
 
-const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
-  <Modal title="Connect to a wallet" onDismiss={onDismiss}>
+const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => {
+  const [onlyMetaMask, setOnlyMetaMask] = useState(false)
+  useEffect(()=>{
+    const onlyMetaMask = localStorage.getItem("onlyMetaMask");
+    if(onlyMetaMask==="true"){
+      setOnlyMetaMask(true);
+    }
+
+  },[])
+  return (
+    <Modal title="Connect to a wallet" onDismiss={onDismiss}>
+      {onlyMetaMask?
+      <WalletCard
+      key={config[0].title}
+      login={login}
+      walletConfig={config[0]}
+      onDismiss={onDismiss}
+      mb={"0"}
+    /> :
+    <>
     {config.map((entry, index) => (
       <WalletCard
         key={entry.title}
@@ -30,6 +48,9 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
         mb={index < config.length - 1 ? "8px" : "0"}
       />
     ))}
+    </>
+    }
+    
     {/* <HelpLink */}
     {/*  href="https://docs.pancakeswap.finance/guides/faq#how-do-i-set-up-my-wallet-on-binance-smart-chain" */}
     {/*  external */}
@@ -38,6 +59,7 @@ const ConnectModal: React.FC<Props> = ({ login, onDismiss = () => null }) => (
     {/*  Learn how to connect */}
     {/* </HelpLink> */}
   </Modal>
-);
+  )
+};
 
 export default ConnectModal;

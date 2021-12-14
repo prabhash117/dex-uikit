@@ -73,6 +73,7 @@ const Menu: React.FC<NavProps> = ({
   profile,
   children,
   socialsLinks,
+  onlyMetaMask,
 }) => {
   const { isXl } = useMatchBreakpoints();
   const isMobile = isXl === false;
@@ -81,6 +82,12 @@ const Menu: React.FC<NavProps> = ({
   const refPrevOffset = useRef(window.pageYOffset);
 
   useEffect(() => {
+    if(onlyMetaMask){
+      localStorage.setItem("onlyMetaMask","true")
+    }else{
+      localStorage.setItem("onlyMetaMask","false")
+    }
+
     const handleScroll = () => {
       const currentOffset = window.pageYOffset;
       const isBottomOfPage = window.document.body.clientHeight === currentOffset + window.innerHeight;

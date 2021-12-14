@@ -48,6 +48,7 @@ export interface PanelProps {
   links: Array<MenuEntry>;
   priceLink: string;
   socialsLinks: Array<MenuEntry>;
+  onlyMetaMask:boolean
 }
 
 export interface NavProps extends PanelProps {
