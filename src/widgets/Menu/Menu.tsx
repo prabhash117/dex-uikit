@@ -82,10 +82,10 @@ const Menu: React.FC<NavProps> = ({
   const refPrevOffset = useRef(window.pageYOffset);
 
   useEffect(() => {
-    if(onlyMetaMask){
-      localStorage.setItem("onlyMetaMask","true")
-    }else{
-      localStorage.setItem("onlyMetaMask","false")
+    if (onlyMetaMask) {
+      localStorage.setItem("onlyMetaMask", "true");
+    } else {
+      localStorage.setItem("onlyMetaMask", "false");
     }
 
     const handleScroll = () => {

@@ -48,7 +48,6 @@ export interface PanelProps {
   links: Array<MenuEntry>;
   priceLink: string;
   socialsLinks: Array<MenuEntry>;
-  onlyMetaMask:boolean
 }
 
 export interface NavProps extends PanelProps {
@@ -56,4 +55,5 @@ export interface NavProps extends PanelProps {
   login: Login;
   profile?: Profile;
   logout: () => void;
+  onlyMetaMask:boolean,
 }
