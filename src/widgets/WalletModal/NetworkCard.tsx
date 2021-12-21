@@ -3,6 +3,7 @@ import Button from "../../components/Button/Button";
 import Text from "../../components/Text/Text";
 import { localStorageKey } from "./config";
 import { Login, NetworkConfig } from "./types";
+import Icon from "react-crypto-icons";
 
 interface Props {
   walletConfig: NetworkConfig;
@@ -11,7 +12,7 @@ interface Props {
 }
 
 const NetworkCard: React.FC<Props> = ({ walletConfig, onDismiss, mb }) => {
-  const { label, icon: Icon } = walletConfig;
+  const { label, icon } = walletConfig;
   return (
     <Button
       fullWidth
@@ -28,7 +29,7 @@ const NetworkCard: React.FC<Props> = ({ walletConfig, onDismiss, mb }) => {
       <Text bold color="primary" mr="16px">
         {label}
       </Text>
-      <Icon width="32px" />
+      <Icon name={icon} size={35} />
     </Button>
   );
 };

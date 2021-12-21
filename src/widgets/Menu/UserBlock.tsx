@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../../components/Button/Button";
 import { useWalletModal } from "../WalletModal";
 import { Login, NetworkConfig } from "../WalletModal/types";
+import Icon from "react-crypto-icons";
 
 interface Props {
   account?: string;
@@ -18,12 +19,12 @@ const UserBlock: React.FC<Props> = ({ account, login, logout, networks }) => {
       {networks &&
       <Button
       size="sm"
-      variant="tertiary"
       onClick={() => {
         onPresentNetworkModal();
       }}
+      style={{marginRight:15}}
     >
-      {networks[0].label}
+      <span style={{marginRight:5, display:"inline-block"}}>Network</span><Icon name={networks[0].icon} size={20} />
     </Button>
       }
       {account ? (

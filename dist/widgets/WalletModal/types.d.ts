@@ -9,6 +9,6 @@ export interface Config {
 }
 export interface NetworkConfig {
     label: string;
-    icon: FC<SvgProps>;
+    icon: string;
     href: string;
 }

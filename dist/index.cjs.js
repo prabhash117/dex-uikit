@@ -10,6 +10,7 @@ var noop = require('lodash/noop');
 var debounce = require('lodash/debounce');
 var throttle = require('lodash/throttle');
 var reactRouterDom = require('react-router-dom');
+var Icon$1d = require('react-crypto-icons');
 var reactTransitionGroup = require('react-transition-group');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
@@ -20,6 +21,7 @@ var get__default = /*#__PURE__*/_interopDefaultLegacy(get);
 var noop__default = /*#__PURE__*/_interopDefaultLegacy(noop);
 var debounce__default = /*#__PURE__*/_interopDefaultLegacy(debounce);
 var throttle__default = /*#__PURE__*/_interopDefaultLegacy(throttle);
+var Icon__default = /*#__PURE__*/_interopDefaultLegacy(Icon$1d);
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -2538,14 +2540,14 @@ var templateObject_1$E;
 
 var NetworkCard = function (_a) {
     var walletConfig = _a.walletConfig, onDismiss = _a.onDismiss, mb = _a.mb;
-    var label = walletConfig.label, Icon = walletConfig.icon;
+    var label = walletConfig.label, icon = walletConfig.icon;
     return (React__default['default'].createElement(Button, { fullWidth: true, variant: "tertiary", onClick: function () {
             window.localStorage.setItem(localStorageKey, "1");
             window.open(walletConfig.href, "_blank");
             onDismiss();
         }, style: { justifyContent: "space-between" }, mb: mb, id: "wallet-connect-" + label.toLocaleLowerCase() },
         React__default['default'].createElement(Text, { bold: true, color: "primary", mr: "16px" }, label),
-        React__default['default'].createElement(Icon, { width: "32px" })));
+        React__default['default'].createElement(Icon__default['default'], { name: icon, size: 35 })));
 };
 
 styled__default['default'](Link)(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 24px;\n"], ["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 24px;\n"])));
@@ -2624,9 +2626,11 @@ var UserBlock = function (_a) {
     var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 4) : null;
     return (React__default['default'].createElement("div", null,
         networks &&
-            React__default['default'].createElement(Button, { size: "sm", variant: "tertiary", onClick: function () {
+            React__default['default'].createElement(Button, { size: "sm", onClick: function () {
                     onPresentNetworkModal();
-                } }, networks[0].label),
+                }, style: { marginRight: 15 } },
+                React__default['default'].createElement("span", { style: { marginRight: 5, display: "inline-block" } }, "Network"),
+                React__default['default'].createElement(Icon__default['default'], { name: networks[0].icon, size: 20 })),
         account ? (React__default['default'].createElement(Button, { size: "sm", variant: "tertiary", onClick: function () {
                 onPresentAccountModal();
             } }, accountEllipsis)) : (React__default['default'].createElement(Button, { size: "sm", onClick: function () {
