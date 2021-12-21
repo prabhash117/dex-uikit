@@ -9,9 +9,10 @@ interface Props {
   walletConfig: NetworkConfig;
   onDismiss: () => void;
   mb: string;
+  disable:boolean
 }
 
-const NetworkCard: React.FC<Props> = ({ walletConfig, onDismiss, mb }) => {
+const NetworkCard: React.FC<Props> = ({ walletConfig, onDismiss, mb, disable }) => {
   const { label, icon } = walletConfig;
   return (
     <Button
@@ -25,6 +26,7 @@ const NetworkCard: React.FC<Props> = ({ walletConfig, onDismiss, mb }) => {
       style={{ justifyContent: "space-between" }}
       mb={mb}
       id={`wallet-connect-${label.toLocaleLowerCase()}`}
+      disabled={disable}
     >
       <Text bold color="primary" mr="16px">
         {label}

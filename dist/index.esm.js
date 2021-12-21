@@ -2525,13 +2525,13 @@ var ConnectModal = function (_a) {
 var templateObject_1$E;
 
 var NetworkCard = function (_a) {
-    var walletConfig = _a.walletConfig, onDismiss = _a.onDismiss, mb = _a.mb;
+    var walletConfig = _a.walletConfig, onDismiss = _a.onDismiss, mb = _a.mb, disable = _a.disable;
     var label = walletConfig.label, icon = walletConfig.icon;
     return (React.createElement(Button, { fullWidth: true, variant: "tertiary", onClick: function () {
             window.localStorage.setItem(localStorageKey, "1");
             window.open(walletConfig.href, "_blank");
             onDismiss();
-        }, style: { justifyContent: "space-between" }, mb: mb, id: "wallet-connect-" + label.toLocaleLowerCase() },
+        }, style: { justifyContent: "space-between" }, mb: mb, id: "wallet-connect-" + label.toLocaleLowerCase(), disabled: disable },
         React.createElement(Text, { bold: true, color: "primary", mr: "16px" }, label),
         React.createElement(Icon$1d, { name: icon, size: 30 })));
 };
@@ -2547,7 +2547,7 @@ var NetworkModal = function (_a) {
         }
     }, []);
     return (React.createElement(Modal, { title: "Select Network", onDismiss: onDismiss },
-        React.createElement(React.Fragment, null, networks && networks.map(function (entry, index) { return (React.createElement(NetworkCard, { key: entry.label, walletConfig: entry, onDismiss: onDismiss, mb: index < connectors.length - 1 ? "8px" : "0" })); }))));
+        React.createElement(React.Fragment, null, networks && networks.map(function (entry, index) { return (React.createElement(NetworkCard, { key: entry.label, walletConfig: entry, onDismiss: onDismiss, disable: index > 0 ? false : true, mb: index < connectors.length - 1 ? "8px" : "0" })); }))));
 };
 var templateObject_1$F;
 

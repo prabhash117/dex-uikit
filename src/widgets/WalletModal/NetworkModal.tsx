@@ -35,6 +35,7 @@ const NetworkModal: React.FC<Props> = ({networks, onDismiss = () => null }) => {
               key={entry.label}
               walletConfig={entry}
               onDismiss={onDismiss}
+              disable={index>0?false:true}
               mb={index < config.length - 1 ? "8px" : "0"}
             />
           ))}
