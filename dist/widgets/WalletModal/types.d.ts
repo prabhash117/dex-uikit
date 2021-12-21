@@ -7,3 +7,8 @@ export interface Config {
     icon: FC<SvgProps>;
     connectorId: ConnectorId;
 }
+export interface NetworkConfig {
+    label: string;
+    icon: FC<SvgProps>;
+    href: string;
+}

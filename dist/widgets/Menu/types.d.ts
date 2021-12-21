@@ -1,4 +1,4 @@
-import { Login } from "../WalletModal/types";
+import { Login, NetworkConfig } from "../WalletModal/types";
 export interface LangType {
     code: string;
     language: string;
@@ -48,4 +48,5 @@ export interface NavProps extends PanelProps {
     profile?: Profile;
     logout: () => void;
     onlyMetaMask?: boolean;
+    networks?: Array<NetworkConfig>;
 }

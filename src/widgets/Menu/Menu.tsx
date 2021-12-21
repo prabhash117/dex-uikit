@@ -74,6 +74,7 @@ const Menu: React.FC<NavProps> = ({
   children,
   socialsLinks,
   onlyMetaMask,
+  networks
 }) => {
   const { isXl } = useMatchBreakpoints();
   const isMobile = isXl === false;
@@ -82,7 +83,6 @@ const Menu: React.FC<NavProps> = ({
   const refPrevOffset = useRef(window.pageYOffset);
 
   useEffect(() => {
-    console.log(onlyMetaMask)
     if (onlyMetaMask) {
       window.localStorage.setItem("onlyMetaMask", "true");
     } else {
@@ -130,7 +130,7 @@ const Menu: React.FC<NavProps> = ({
           href={homeLink?.href ?? "/"}
         />
         <Flex>
-          <UserBlock account={account} login={login} logout={logout} />
+          <UserBlock account={account} login={login} logout={logout} networks={networks} />
           {profile && <Avatar profile={profile} />}
         </Flex>
       </StyledNav>
