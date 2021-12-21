@@ -29,7 +29,7 @@ const NetworkCard: React.FC<Props> = ({ walletConfig, onDismiss, mb }) => {
       <Text bold color="primary" mr="16px">
         {label}
       </Text>
-      <Icon name={icon} size={35} />
+      <Icon name={icon} size={30} />
     </Button>
   );
 };

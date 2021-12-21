@@ -19,6 +19,7 @@ const UserBlock: React.FC<Props> = ({ account, login, logout, networks }) => {
       {networks &&
       <Button
       size="sm"
+      variant="tertiary"
       onClick={() => {
         onPresentNetworkModal();
       }}
