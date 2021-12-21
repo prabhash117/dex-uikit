@@ -2547,7 +2547,7 @@ var NetworkCard = function (_a) {
             onDismiss();
         }, style: { justifyContent: "space-between" }, mb: mb, id: "wallet-connect-" + label.toLocaleLowerCase() },
         React__default['default'].createElement(Text, { bold: true, color: "primary", mr: "16px" }, label),
-        React__default['default'].createElement(Icon__default['default'], { name: icon, size: 35 })));
+        React__default['default'].createElement(Icon__default['default'], { name: icon, size: 30 })));
 };
 
 styled__default['default'](Link)(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 24px;\n"], ["\n  display: flex;\n  align-self: center;\n  align-items: center;\n  margin-top: 24px;\n"])));
@@ -2626,7 +2626,7 @@ var UserBlock = function (_a) {
     var accountEllipsis = account ? account.substring(0, 4) + "..." + account.substring(account.length - 4) : null;
     return (React__default['default'].createElement("div", null,
         networks &&
-            React__default['default'].createElement(Button, { size: "sm", onClick: function () {
+            React__default['default'].createElement(Button, { size: "sm", variant: "tertiary", onClick: function () {
                     onPresentNetworkModal();
                 }, style: { marginRight: 15 } },
                 React__default['default'].createElement("span", { style: { marginRight: 5, display: "inline-block" } }, "Network"),
