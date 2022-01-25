@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../../components/Button/Button";
 import Text from "../../components/Text/Text";
-import LinkExternal from "../../components/Link/LinkExternal";
+// import LinkExternal from "../../components/Link/LinkExternal";
 import Flex from "../../components/Flex/Flex";
 import { Modal } from "../Modal";
 import CopyToClipboard from "./CopyToClipboard";
